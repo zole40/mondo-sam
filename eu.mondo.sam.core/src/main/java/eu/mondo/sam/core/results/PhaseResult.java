@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonSetter;
 
 import eu.mondo.sam.core.metrics.BenchmarkMetric;
 
@@ -98,6 +99,7 @@ public class PhaseResult {
 	 * @param sequence
 	 *                the place in the execution order of phases.
 	 */
+	@JsonSetter("Sequence")
 	public void setSequence(int sequence) {
 		this.sequence = Integer.toString(sequence);
 	}

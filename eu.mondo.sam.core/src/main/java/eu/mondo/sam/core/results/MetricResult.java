@@ -1,6 +1,7 @@
 package eu.mondo.sam.core.results;
 
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonSetter;
 
 /**
  * Represents the final results of a BenchmarkMetric object. This class will be
@@ -23,7 +24,7 @@ public class MetricResult {
 	 * Represents the measured value of a metric.
 	 */
 	@JsonProperty("MetricValue")
-	private String value;
+	private Double value;
 
 	/**
 	 * Returns the name of the metric.
@@ -39,7 +40,7 @@ public class MetricResult {
 	 * 
 	 * @return value
 	 */
-	public String getValue() {
+	public Double getValue() {
 		return value;
 	}
 
@@ -47,8 +48,8 @@ public class MetricResult {
 	 * Adjusts the name identifier of the metric.
 	 * 
 	 * @param name
-	 *                recommended to be the same name, as in the
-	 *                BenchmarkMetric object to which this class belongs
+	 *            recommended to be the same name, as in the BenchmarkMetric object
+	 *            to which this class belongs
 	 */
 	public void setName(String name) {
 		this.metricName = name;
@@ -58,9 +59,15 @@ public class MetricResult {
 	 * Adjusts the value of the measurement of a BenchmarkMetric instance.
 	 * 
 	 * @param value
-	 *                the exact value of measurement as String
+	 *            the exact value of measurement as String
 	 */
+
+	@JsonSetter("MetricValue")
 	public void setValue(String value) {
+		this.value = Double.parseDouble(value);
+	}
+
+	public void setValue(Double value) {
 		this.value = value;
 	}
 }

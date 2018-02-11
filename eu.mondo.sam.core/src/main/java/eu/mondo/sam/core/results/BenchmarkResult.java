@@ -23,20 +23,20 @@ public class BenchmarkResult {
 	 * @see CaseDescriptor
 	 */
 	@JsonProperty("Case")
-	private CaseDescriptor caseDescriptor;
+	protected CaseDescriptor caseDescriptor;
 
 	/**
 	 * Contains PhaseResult objects as a list.
 	 */
 	@JsonProperty("PhaseResults")
-	private List<PhaseResult> phaseResults;
+	protected List<PhaseResult> phaseResults;
 
 	/**
 	 * Includes of ResultSerializer instances. The elements in the list are
 	 * responsible for the process of publishing benchmark results. By
 	 * default, this list contains a JsonSerializer object.
 	 */
-	private static List<ResultSerializer> serializers;
+	protected static List<ResultSerializer> serializers;
 
 	/**
 	 * Instantiates the phaseResults list and the serializers as well.

@@ -39,6 +39,10 @@ public class PhaseResult {
 	@JsonProperty("Metrics")
 	protected List<MetricResult> metrics;
 
+	public void setMetrics(List<MetricResult> metrics) {
+		this.metrics = metrics;
+	}
+
 	/**
 	 * Instantiates a metrics list.
 	 */
